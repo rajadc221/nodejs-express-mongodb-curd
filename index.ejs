@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CRUD App</title>
+  </head>
+  <body>
+    <h1>CRUD App</h1>
+    <form action="/create" method="POST">
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="submit" value="Add" />
+    </form>
+    <ul>
+      <% items.forEach((item) => { %>
+        <li><%= item.name %> <a href="/edit/<%= item._id %>">Edit</a> <a href="/delete/<%= item._id %>">Delete</a></li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
